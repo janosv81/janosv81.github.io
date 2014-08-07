@@ -1,0 +1,37 @@
+﻿<html>
+    <head>
+        <script type="text/javascript"  src="popunder.min.js">
+        </script>
+    </head>
+<body>
+
+<h1>jQuery-Popunder Demo Page</h1>
+<h4>&copy; Hans-Peter Buniat (<a href="https://github.com/hpbuniat/jquery-popunder/blob/master/LICENCE">LICENCE</a>) - (<a href="https://github.com/hpbuniat/jquery-popunder">Github Project</a>)</h4>
+<hr />
+
+<div id="testFive">
+    <h3>Testcase #3 (1 Popunder)</h3>
+    <pre>
+        window.aPopunder = [
+            ['http://www.github.com']
+        ];
+
+        $.popunder.helper.def.fs = false;
+    </pre>
+
+    <a href="#" onclick="$.popunder()">Open Popunder via Link</a>
+</div>
+
+
+<a href="https://github.com/hpbuniat/jquery-popunder"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+<script type="text/javascript">
+    $(function() {
+        $('form[action="#"]').attr('action', document.location.href);
+        $('pre').each(function(i, e) {
+            eval(e.innerHTML);
+        });
+    });
+</script>
+</body>
+</html>
