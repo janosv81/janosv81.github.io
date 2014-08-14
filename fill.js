@@ -109,8 +109,8 @@ function fillInfo(tester_email, tester_password) {
         });
 
         $('select[id*="Age"] :nth-child(2)').attr('selected', 'selected').trigger('change');
-		setTimeout(function(){$('input[id*="BUS"]').click();},200);
-		setTimeout(function(){$('#passengerDetailsSection_continue').click();fillpayment();},1000);
+		setTimeout(function(){$('input[id*="BUS"]').click();},500);
+		setTimeout(function(){$('#passengerDetailsSection_continue').click();fillpayment();},500);
 		function fillpayment(){
         $('#VerifySecurityCode').val('123');
         if ($('#payment-selector').is(':visible')) {
