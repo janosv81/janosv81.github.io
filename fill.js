@@ -110,35 +110,36 @@ function fillInfo(tester_email, tester_password) {
 
         $('select[id*="Age"] :nth-child(2)').attr('selected', 'selected').trigger('change');
         $('input[id*="BUS"]').click();
-		$('#passengerDetailsSection_continue').click();
+		setTimeout(function(){$('#passengerDetailsSection_continue').click();},500);
+		
         $('#VerifySecurityCode').val('123');
         if ($('#payment-selector').is(':visible')) {
             $('input#VI').click();
         }
         if ($('#CardNumber').is(':visible')) {
-            $('#CardNumber').val('4444333322221111');
+            $('#CardNumber').val('4444333322221111').trigger('change');
         }
 
         if ($('#SecurityCode').is(':visible')) {
-            $('#SecurityCode').val('123');
+            $('#SecurityCode').val('123').trigger('change');
         }
         if ($('#VerifySecurityCode').is(':visible')) {
-            $('#VerifySecurityCode').val('123');
+            $('#VerifySecurityCode').val('123').trigger('change');
         }
 
 
         if ($('#expiryDateMonth').is(':visible')) {
-            $('#expiryDateMonth').val('7');
+            $('#expiryDateMonth').val('7').trigger('change');
         }
         if ($('#expiryDateYear').is(':visible')) {
-            $('#expiryDateYear').val('2015');
+            $('#expiryDateYear').val('2015').trigger('change');
         }
 
         if ($('#NameOnCard').is(':visible')) {
-            $('#NameOnCard').val('tester');
+            $('#NameOnCard').val('tester').trigger('change');
         }
         if ($('#SaveMyCreditCard').is(':visible')) {
-            $('#SaveMyCreditCard').attr('checked', true);
+            $('#SaveMyCreditCard').attr('checked', true).trigger('change');
         }
         $('#chkConfirmTerms').attr('checked', true);
         //$('#btnBookNow').click();
