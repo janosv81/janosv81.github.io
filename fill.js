@@ -110,8 +110,8 @@ function fillInfo(tester_email, tester_password) {
 
         $('select[id*="Age"] :nth-child(2)').attr('selected', 'selected').trigger('change');
         $('input[id*="BUS"]').click();
-		setTimeout(function(){$('#passengerDetailsSection_continue').click();},500);
-		
+		setTimeout(function(){$('#passengerDetailsSection_continue').click();fillpayment()},1000);
+		function fillpayment(){
         $('#VerifySecurityCode').val('123');
         if ($('#payment-selector').is(':visible')) {
             $('input#VI').click();
@@ -143,6 +143,7 @@ function fillInfo(tester_email, tester_password) {
         }
         $('#chkConfirmTerms').attr('checked', true);
         //$('#btnBookNow').click();
+		}
 //New myEasyjet
     } else if (window.location.pathname.match(/.*Basket\/MainBasket$/)) {
         $('#paymentType  option:contains("VI")').attr('selected', 'selected')
