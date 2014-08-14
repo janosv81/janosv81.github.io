@@ -109,7 +109,8 @@ function fillInfo(tester_email, tester_password) {
         });
 
         $('select[id*="Age"] :nth-child(2)').attr('selected', 'selected').trigger('change');
-        $('input[id*="BUS"]').click()
+        $('input[id*="BUS"]').click();
+		$('#passengerDetailsSection_continue').click();
         $('#VerifySecurityCode').val('123');
         if ($('#payment-selector').is(':visible')) {
             $('input#VI').click();
