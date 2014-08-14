@@ -101,15 +101,15 @@ function fillInfo(tester_email, tester_password) {
         });
 
 
-        $('input[id*="LastName"]').val('Tester');
+        $('input[id*="LastName"]').val('Tester').trigger('change');
 
         $.each($('input[id*="FirstName"]'), function() {
             var letter = pos2letter(this.id);
-            $(this).val(letter);
+            $(this).val(letter).trigger('change');
         });
 
-        $('select[id*="Age"] :nth-child(2)').attr('selected', 'selected');
-        $('.tripPanel:first input').click();
+        $('select[id*="Age"] :nth-child(2)').attr('selected', 'selected').trigger('change');
+        $('input[id*="BUS"]').click()
         $('#VerifySecurityCode').val('123');
         if ($('#payment-selector').is(':visible')) {
             $('input#VI').click();
