@@ -25,25 +25,30 @@ var appended;
     var testcaseName = testcaseArray[testcaseArray.size() - 1];
     var testcasePackage = urlparts[1].replace(/\//g, '.');
     var pngurl = urlparts[0] + '/artifact/reports/' + testcasePackage + '/smartboxfr_' + testcaseName + '.png';
-	
+    logurl = urlparts[0] + '/artifact/reports/' + testcasePackage + '/sbx-test-log.log'
+    
+	link = document.createElement('a');
+    link.setAttribute('href', logurl);
+    link.innerHTML = '  [LOG]';
+    $(element).append(link);
 	
     link = document.createElement('a');
     link.setAttribute('href', pngurl);
-	link.setAttribute('onmouseover', "document.getElementById('place-holder-"+index+"').src='"+pngurl+"';");
-	link.setAttribute('onmouseout', "document.getElementById('place-holder-"+index+"').src='https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png';");
-    link.innerHTML = '  --> Screenshot';
-	$(element).append(link);
-    
-	placeholder = document.createElement('img');
-	placeholder.setAttribute('src', "https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png");
-	placeholder.setAttribute('id', "place-holder-"+index);
-	placeholder.setAttribute('style', "zindex: 100; position: absolute; max-height: 300px;max-width: 300px;");
-	$(element).append(placeholder);
+    link.setAttribute('onmouseover', 'document.getElementById(\'place-holder-' + index + '\').src=\'' + pngurl + '\';');
+    link.setAttribute('onmouseout', 'document.getElementById(\'place-holder-' + index + '\').src=\'https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png\';');
+    link.innerHTML = '     [SCREENSHOT]';
+    $(element).append(link);
+	
+    placeholder = document.createElement('img');
+    placeholder.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png');
+    placeholder.setAttribute('id', 'place-holder-' + index);
+    placeholder.setAttribute('style', 'zindex: 100; position: absolute; max-height: 350px;max-width: 350px;');
+    $(element).append(placeholder);
   }
   loadScript('https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js', function () {
-	  if(appended != true){
-	  $('td#main-panel table tr:nth-child(5) ol li').each(appendScreenshotLink);}
-	appended = true;
+    if (appended != true) {
+      $('td#main-panel table tr:nth-child(5) ol li').each(appendScreenshotLink);
+    }
+    appended = true;
   });
 }) ();
-
