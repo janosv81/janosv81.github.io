@@ -39,7 +39,7 @@ var appended;
     placeholder = document.createElement('img');
     placeholder.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png');
     placeholder.setAttribute('id', 'place-holder-' + index);
-    placeholder.setAttribute('style', 'zindex: 100; position: fixed; top: 100; left: 100px; max-height: 600px;max-width: 800px;');
+    placeholder.setAttribute('style', "zindex: 100; position: fixed; left: 20px; top: 100px; max-height: 600px;max-width: 800px;");
     $(element).append(placeholder);
   }
   var appendScreenshotCell = function (index, element) {
@@ -61,7 +61,7 @@ var appended;
     placeholder = document.createElement('img');
     placeholder.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png');
     placeholder.setAttribute('id', 'place-holder-' + index);
-    placeholder.setAttribute('style', 'zindex: 100; position: fixed; top: 100; left: 100px; max-height: 600px;max-width: 800px;');
+    placeholder.setAttribute('style', "zindex: 100; position: fixed; left: 20px; top: 100px; max-height: 600px;max-width: 800px;");
     link = document.createElement('a');
     link.setAttribute('href', pngurl);
     link.setAttribute('onmouseover', 'document.getElementById(\'place-holder-' + index + '\').src=\'' + pngurl + '\';');
