@@ -25,10 +25,20 @@ var appended;
     var testcaseName = testcaseArray[testcaseArray.size() - 1];
     var testcasePackage = urlparts[1].replace(/\//g, '.');
     var pngurl = urlparts[0] + '/artifact/reports/' + testcasePackage + '/smartboxfr_' + testcaseName + '.png';
+	
+	
     link = document.createElement('a');
     link.setAttribute('href', pngurl);
+	link.setAttribute('onmouseover', "document.getElementById('place-holder-"+index+"').src='"+pngurl+"';");
+	link.setAttribute('onmouseout', "document.getElementById('place-holder-"+index+"').src='https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png';");
     link.innerHTML = '  --> Screenshot';
-    $(element).append(link);
+	$(element).append(link);
+    
+	placeholder = document.createElement('img');
+	placeholder.setAttribute('src', "https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png");
+	placeholder.setAttribute('id', "place-holder-"+index);
+	placeholder.setAttribute('style', "zindex: 100; position: absolute; max-height: 300px;max-width: 300px;");
+	$(element).append(placeholder);
   }
   loadScript('https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js', function () {
 	  if(appended != true){
@@ -36,3 +46,4 @@ var appended;
 	appended = true;
   });
 }) ();
+
