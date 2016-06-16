@@ -21,6 +21,13 @@ var appended;
   }
   var appendScreenshotLink = function (index, element) {
     var url = element.firstChild.getAttribute('href');
+    $.ajax(url,{type: "GET"}).done(function( data ) {
+    if ( console && console.log ) {
+      var match = data.match(/Message: <\/b>.*?<\/p>/g);
+      console.log( "Sample of data:",  match );
+      $(element).after("<b><p>"+match);
+    }
+  });
     var urlparts = url.split('/testngreports/');
     var testcaseArray = urlparts[1].split('/');
     var testcaseName = testcaseArray[testcaseArray.size() - 1];
