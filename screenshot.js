@@ -22,7 +22,7 @@ var appended;
     var url = element.firstChild.getAttribute('href');
     $.ajax(url,{type: "GET"}).done(function( data ) {
     if ( console && console.log ) {
-      var match = data.match(/Message: <\/b>.*?<\/p>/gs);
+      var match = data.match(/Message: <\/b>.*?<\/p>/gm);
       console.log( "Sample of data:",  match );
       $(element).after("<b><p>"+match);
     }
