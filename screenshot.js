@@ -20,10 +20,13 @@ var appended;
   }
   var appendScreenshotLink = function (index, element) {
     var url = element.firstChild.getAttribute('href');
+    	graphimg = document.createElement('img');
+    	graphimg.setAttribute('src', url+'/graph');
+    	graphimg.setAttribute('id', 'graph' + index);
+    	$(element).after(graphimg);
     $.ajax(url,{type: "GET"}).done(function( data ) {
     if ( console && console.log ) {
       var match = data.match(/Message: <\/b>.*?<\/p>/gm);
-      console.log( "Sample of data:",  match );
       $(element).after("<b><p>"+match);
     }
   });
